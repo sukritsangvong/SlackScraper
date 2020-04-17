@@ -1,7 +1,7 @@
 # SlackScraper
 PJ Sangvong, 17 April 2020
 
-This program creates csv file with grades for students' reading posts in CS111.
+This program creates a csv file with grades for students' reading posts in CS111.
 It reads through specific keyword in the messages of a given channel of Slack.
 
 Requirement:
