@@ -6,7 +6,7 @@ This is a class object that is used with SlackScraper
 Parameters:
 
 name: name of the student
-readingPost: the first 3 indexs of string text
+readingPost: the first 3 indices of string text
 userid: the user ID of the student
 """
 class Student:
