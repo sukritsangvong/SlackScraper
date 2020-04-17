@@ -91,9 +91,10 @@ def sortStudent(thisStudent):
     return thisStudent.name
 
 def main():
-    #initializes variable
-    directoryName = './reading-posts' #directory should be inside this script
+    #initializes variables
     profName = 'loesper'
+    #directory should be in the same directory as this script
+    directoryName = './reading-posts' 
     outputFileName = 'Graded.csv'
     studentList = []
 
