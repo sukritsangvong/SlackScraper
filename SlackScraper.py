@@ -8,10 +8,12 @@ PJ Sangvong, 17 April 2020
 This program creates csv file with grades for students' reading posts.
 
 Requirement:
+
     Need to have reading-post directory in the directory that this program
                                 is located
 
 Excliamer:
+
     This program strictly uses #R<number> as an identifier for the grades
 
     Texts other than #R<number> would be considered unknowSymbol, which would be
@@ -92,7 +94,6 @@ def main():
     #initializes variable
     directoryName = './reading-posts' #directory should be inside this script
     profName = 'loesper'
-    monthToNotInclude = '3'
     outputFileName = 'Graded.csv'
     studentList = []
 
@@ -102,8 +103,7 @@ def main():
 
     #go through every file in the given directoryName
     for file in dir:
-        if not file[6] == monthToNotInclude:
-            studentList = loadJSON(directoryName+ '/' + file, studentList)
+        studentList = loadJSON(directoryName+ '/' + file, studentList)
 
     #sorts students in the list
     studentList = sorted(studentList, key = sortStudent)
