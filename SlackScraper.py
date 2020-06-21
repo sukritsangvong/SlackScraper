@@ -23,6 +23,19 @@ Excliamer:
     firstname. The order remains similar to the spreadsheet, but the file does
     not include students that had never posted anything before.
 """
+
+#list of the strings of usernames that will not be included in the csv file
+ignoreList = []
+outputFileName = 'Graded.csv'
+directoryName = './reading-posts' #directory should be inside this script
+
+#names of the field to be written in the csv file
+#(the number of reading posts for the entire term)
+fieldnames = ['Name','R1','R2','R3','R4','R5','R6','R7','R8','R9','R10',\
+                    'R11','R12','R13','R14','R15','R16','R17','R18','R19',\
+                    'R20','R21','R22','R23','R24','R25']
+
+
 def loadJSON(filename, studentList):
     """Reads JSON file from filename and add object Student to studentList"""
     #opens JSON file
@@ -36,7 +49,7 @@ def loadJSON(filename, studentList):
             name = dict['user_profile']['name']
             userid = dict['user']
             readingPost = dict['text'][0:3]
-            
+
             #checks for multiple digits Reading Post(R10++)
             try:
                 isConvertable = int(dict['text'][2:4])
@@ -44,7 +57,7 @@ def loadJSON(filename, studentList):
                     readingPost = dict['text'][0:4]
             except ValueError:
                 pass
-            
+
 
             if len(studentList) == 0: #checks if first time adding
                 thisStudent = Student(name,  readingPost, userid)
@@ -73,7 +86,7 @@ def loadJSON(filename, studentList):
                     userid = dict['user'] #reply post has userid
                     readingPost = dict['text'][0:3]
                     foundMatch = False
-                    
+
                     #checks for multiple digits Reading Post(R10++)
                     try:
                         isConvertable = int(dict['text'][2:4])
@@ -81,7 +94,7 @@ def loadJSON(filename, studentList):
                             readingPost = dict['text'][0:4]
                     except ValueError:
                         pass
-                    
+
                     for eachStudent in studentList: #uses userid to check
                         #adds to existing Student
                         if eachStudent.equal(userid):
@@ -109,9 +122,6 @@ def sortStudent(thisStudent):
 
 def main():
     #initializes variable
-    directoryName = './reading-posts' #directory should be inside this script
-    ignoreList = ['loesper', 'romans2']
-    outputFileName = 'Graded.csv'
     studentList = []
 
     #gets directory names
@@ -133,9 +143,6 @@ def main():
     with open( outputFileName , 'w') as newfile:
         #writes the header
         writer = csv.writer(newfile, delimiter = ',', lineterminator= '\n')
-        fieldnames = ['Name','R1','R2','R3','R4','R5','R6','R7','R8','R9','R10',\
-                            'R11','R12','R13','R14','R15','R16','R17','R18','R19',\
-                            'R20','R21','R22','R23','R24','R25']
         writer.writerow(fieldnames)
 
         #write the data
