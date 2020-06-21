@@ -13,9 +13,9 @@ Excliamer:
 
     This program strictly uses #R<number> as an identifier for the grades
 
-    Texts other than #R<number> would be considered unknowSymbol, which would be
+    Texts other than #R<number> would be considered unknowSymbol, which will be
     printed in the terminal. The output file will not include unknowSymbol
 
-    The file output has students' names as their lasname + first letter of their
+    The file output has students' names as their lastname + first letter of their
     firstname. The order remains similar to the spreadsheet, but the file does
     not include students that had never posted anything before.
