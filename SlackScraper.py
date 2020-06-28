@@ -25,7 +25,7 @@ Excliamer:
 """
 
 #list of the strings of usernames that will not be included in the csv file
-ignoreList = [] #ex. sangvongp from PJ Sangvong
+ignoreList = []
 outputFileName = 'Graded.csv'
 directoryName = './reading-posts' #directory should be inside this script
 
