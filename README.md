@@ -9,7 +9,7 @@ Requirement:
     Need to have reading-post directory in the directory that this program
                                 is located
 
-Excliamer:
+Exclaimer:
 
     This program strictly uses #R<number> as an identifier for the grades
 
